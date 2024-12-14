@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ferv Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background: linear-gradient(75deg, #fda518af, #f55a42bb); */
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            color: #444;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            /* color: #333; */
+        }
+
+        img {
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+
+        /* header {
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 5px;
+        } */
+
+        table {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(48, 29, 2, 0.3);
+            padding: 20px;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 16px;
+            /* color: #333; */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            /* background: linear-gradient(175deg, #fb53f5, #f8bf3a); */
+            background-color: white;
+            color: rgb(0, 0, 0);
+            border:2px solid #2e2e2e;
+            /* border: none; */
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(75deg, #fb53f5, #f8bf3a);
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 2px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #e6e6e6;
+        }
+
+        /* .error-message {
+            color: red;
+            font-size: 12px;
+        } */
+
+
+        /* Reset some default browser styles */
+        body,
+        h1,
+        h2,
+        p,
+        form,
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* .image-container {
+            padding: 0;
+            margin: 0;
+        } */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5%;
+            /* Reduced height */
+            margin-top: 0;
+            z-index: 1000;
+            background-color: white;
+            padding-left: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .image-container {
+            margin: 0;
+            /* Remove margin from the image container */
+            padding: 0;
+            /* Remove padding if necessary */
+        }
+
+        /* Style for the main content */
+        .content {
+            margin-top: 100px;
+            /* Adjust to header height to prevent overlap */
+            padding: 1rem;
+            /* Optional padding */
+        }
+
+        /* Center the login form
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Full viewport height */
+
+
+
+        .heading {
+            font-size: 2.5em;
+            color: #2e2e2e;
+            font-weight: 700;
+            margin: 15px 0 30px 0;
+        }
+
+
+
+        .description {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .description p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="image-container">
+            <a href="intro.html"><img class="logo" src="logo.png" alt="Logo"
+                    style="width: 80px; padding-left: 15px;"></a>
+        </div>
+    </header>
+
+    <main class="content">
+        <div>
+            <section class="description">
+                <h2>Analyze Your Website Traffic Efficiently</h2>
+                <p>Our platform connects seamlessly with your Google Analytics data to provide insightful reports on
+                    visitor
+                    trends, page views, bounce rates, and user behavior. With clear visualizations, you can better
+                    understand how users interact with your website and optimize for better performance.</p>
+            </section>
+        </div>
+        <!-- Centered Container -->
+        <div class="center-container">
+
+            <form id="registrationForm" method="POST" action="submit_form.php">
+                <table>
+                    <tr>
+                        <td><label for="firstName">First Name:</label></td>
+                        <td><input type="text" id="firstName" name="firstName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="lastName">Last Name:</label></td>
+                        <td><input type="text" id="lastName" name="lastName" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mobilenumber">Mobile Number</label></td>
+                        <td>
+                            <input type="tel" id="mobilenumber" name="mobilenumber" required
+                                oninput="validateMobileNumber()">
+                            <span class="error-message" id="mobileError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" name="password" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dob">Date of Birth:</label></td>
+                        <td><input type="date" id="dob" name="dob" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">Country:</label></td>
+                        <td>
+                            <select id="country" name="country">
+                                <option value="india">India</option>
+                                <option value="usa">USA</option>
+                                <option value="canada">Canada</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="bio">Bio:</label></td>
+                        <td><textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label>Subscribe to Newsletter:</label></td>
+                        <td><input type="checkbox" id="newsletter" name="newsletter"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <input type="submit" value="Register">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <script>
+            function validateMobileNumber() {
+                const mobileField = document.getElementById("mobilenumber");
+                const errorMessage = document.getElementById("mobileError");
+                const mobileNumber = mobileField.value;
+                const regex = /^[6-9]\d{9}$/;
+
+                if (!regex.test(mobileNumber)) {
+                    errorMessage.textContent = "Invalid mobile number. It should start with 6, 7, 8, or 9 and be 10 digits long.";
+                    mobileField.setCustomValidity("Invalid mobile number.");
+                } else {
+                    errorMessage.textContent = "";
+                    mobileField.setCustomValidity("");
+                }
+            }
+        </script>
+</body>
+
+</html>
